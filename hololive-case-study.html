@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Hololive Super Expo | NQJ.SYS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .case-hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-tech);
+        }
+
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        /* Responsive iframe container for YouTube background */
+        .video-foreground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .video-foreground iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* 16:9 Aspect Ratio */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 16:9 Aspect Ratio */
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.7) 60%, var(--bg-deep) 100%);
+            z-index: -1;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-tech);
+        }
+
+        .meta-item span {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .meta-item p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+        }
+
+        .content-block {
+            margin-bottom: 80px;
+        }
+
+        .content-block h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .content-block h3::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--accent-cyan);
+        }
+
+        .visual-asset {
+            width: 100%;
+            height: 450px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-tech);
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visual-asset.figma-flow {
+            background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+        }
+
+        .asset-label {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            font-size: 0.7rem;
+            background: var(--bg-deep);
+            padding: 4px 10px;
+            border: 1px solid var(--border-tech);
+        }
+
+        .challenge-box {
+            border-left: 4px solid var(--warning);
+            padding-left: 25px;
+            margin: 40px 0;
+        }
+
+        .tech-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .tech-list li::before {
+            content: "→";
+            color: var(--accent-cyan);
+            margin-right: 10px;
+            font-family: 'JetBrains Mono';
+        }
+
+        .back-nav {
+            margin-top: 20px;
+            display: inline-block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: 'JetBrains Mono';
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .back-nav:hover {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-bg"></div>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <span class="logo-icon">▶</span> NQJ<span>.SYS</span>
+        </a>
+        <div class="nav-group">
+            <div class="nav-pill white-pill">
+                <a href="index.html#work">Work</a>
+                <a href="index.html#about">About</a>
+            </div>
+            <a href="index.html#contact" class="nav-pill blue-pill">Contact ↗</a>
+        </div>
+    </nav>
+
+    <header class="case-hero">
+        <div class="video-foreground">
+            <iframe src="https://www.youtube.com/embed/nqSeeYBhojg?autoplay=1&mute=1&loop=1&playlist=nqSeeYBhojg&controls=0&showinfo=0&rel=0&enablejsapi=1" 
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="hero-overlay"></div>
+        <section style="padding: 0; position: relative; z-index: 1;">
+            <a href="index.html" class="back-nav">← RETURN TO INDEX</a>
+            <h1 class="hero-title" style="margin-top: 20px;">HOLOLIVE<br><span class="text-cyan">SUPER EXPO</span></h1>
+            <p class="hero-desc">Layout & UI Design for the premier global VTuber event.</p>
+        </section>
+    </header>
+
+    <section>
+        <div class="meta-grid mono">
+            <div class="meta-item">
+                <span>Role</span>
+                <p>UI Designer / Frontend Integrator</p>
+            </div>
+            <div class="meta-item">
+                <span>Client</span>
+                <p>COVER Corp (Japan)</p>
+            </div>
+            <div class="meta-item">
+                <span>Timeline</span>
+                <p>4 Months (Pre-event)</p>
+            </div>
+            <div class="meta-item">
+                <span>Tools</span>
+                <p>Figma, SCSS, JS</p>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Project Overview</h3>
+            <p class="text-muted">
+                The Hololive Super Expo is a massive annual event celebrating the VTuber culture. Working within a cross-functional international team, I was tasked with architecting the visual layout and interaction design of the primary landing page. The goal was to translate the vibrant, high-energy "Idol" aesthetic into a functional, high-performance web experience that could handle millions of simultaneous visitors.
+            </p>
+        </div>
+
+        <div class="content-block">
+            <h3>Design Process (Figma)</h3>
+            <p class="text-muted">
+                My workflow began in Figma, where I developed a modular design system. I focused on creating a "Digital Festival" atmosphere using neon accents and layered glassmorphism. I was responsible for:
+            </p>
+            <div class="visual-asset figma-flow">
+                <span class="asset-label mono">// FIGMA WORKSPACE: WIREFRAMES & PROTOTYPES</span>
+                <div style="text-align: center;">
+                    <p class="mono" style="opacity: 0.5;">[ FIGMA LAYOUT VISUALIZATION ]</p>
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <div style="width: 60px; height: 80px; background: #444; border: 1px solid var(--accent-cyan);"></div>
+                        <div style="width: 60px; height: 80px; background: #444; border: 1px solid var(--accent-cyan);"></div>
+                        <div style="width: 60px; height: 80px; background: #444; border: 1px solid var(--accent-cyan);"></div>
+                    </div>
+                </div>
+            </div>
+            <ul class="tech-list text-muted">
+                <li>Hierarchical Grid Systems for schedule-heavy data.</li>
+                <li>Responsive breakpoints for seamless mobile browsing.</li>
+                <li>Interactive component states (Hovers, Taps, Loading).</li>
+                <li>Asset optimization for high-density displays.</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h3>Technical Implementation</h3>
+            <div class="challenge-box">
+                <p class="mono" style="color: var(--warning); font-size: 0.8rem; margin-bottom: 10px;">[ CRITICAL CHALLENGE ]</p>
+                <p>Designing for a global audience meant the UI had to be incredibly lightweight despite the heavy visual effects. I bridged the gap between design and dev by writing the initial SCSS/JS components.</p>
+            </div>
+            <p class="text-muted">
+                I translated the Figma designs into high-performance code, focusing on the "Look and Feel" of the scrolling experience. Using CSS Grid and Custom Properties, I ensured the theme could be updated instantly across the site for different talent group reveals.
+            </p>
+            <div class="visual-asset">
+                <span class="asset-label mono">// CODE SNIPPET: RESPONSIVE GRID ARCHITECTURE</span>
+                <pre class="mono" style="font-size: 0.7rem; color: var(--accent-cyan);">
+.expo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  perspective: 1000px;
+}
+
+.talent-card {
+  transition: transform var(--ease-expo);
+  backdrop-filter: blur(10px);
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>Key Results</h3>
+            <div class="stats-container" style="margin-top: 20px;">
+                <div class="stat-box">
+                    <span class="stat-number mono">1.2M+</span>
+                    <span class="stat-label">Unique Hits (Day 1)</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number mono">98</span>
+                    <span class="stat-label">Lighthouse Perf Score</span>
+                </div>
+            </div>
+            <p class="text-muted" style="margin-top: 30px;">
+                The project was successfully launched globally, receiving praise for its intuitive navigation of the complex event schedule. My role as the design-to-code bridge reduced the production time by 3 weeks, as the engineering team could directly utilize the CSS components I developed.
+            </p>
+        </div>
+
+        <div style="text-align: center; padding: 60px 0; border-top: 1px solid var(--border-tech);">
+            <h4 class="mono text-cyan" style="margin-bottom: 20px;">END OF LOG</h4>
+            <a href="index.html#work" class="btn mono">Explore More Projects</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <span class="footer-logo mono text-cyan">NQJ.SYS</span>
+                <p class="text-muted" style="font-size: 0.8rem;">© 2026 Neville Quinn James.</p>
+            </div>
+            <div class="mono text-muted" style="text-align: right; font-size: 0.8rem;">
+                <p>STATUS: CASE_STUDY_ACTIVE</p>
+                <p>LOC: MALAYSIA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
