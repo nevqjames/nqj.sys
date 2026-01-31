@@ -201,7 +201,24 @@ section {
 .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
 .project-card { background: var(--bg-panel); border: 1px solid var(--border-tech); position: relative; overflow: hidden; transition: transform 0.3s var(--ease-tech), border-color 0.3s; }
 .project-card:hover { transform: translateY(-5px); border-color: var(--accent-cyan); }
-.card-image { width: 100%; height: 250px; background-color: #1a1a1a; overflow: hidden; position: relative; }
+
+.card-image { 
+    width: 100%; 
+    height: 250px; 
+    background-color: #1a1a1a; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* Ensures the image is centered within the crop */
+    object-position: center;
+    display: block;
+}
+
 .card-image-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #333; transition: transform 0.5s; }
 .project-card:hover .card-image-placeholder { transform: scale(1.05); }
 .card-overlay { position: absolute; top: 10px; right: 10px; background: var(--bg-deep); color: var(--accent-cyan); padding: 5px 10px; font-size: 0.7rem; border: 1px solid var(--accent-cyan); z-index: 2; }
