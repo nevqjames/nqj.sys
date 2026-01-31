@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NQJ.SYS | Neville Q. James | Senior Multimedia Designer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@100;400;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <!-- 1. The Logo (Left) -->
+        <a href="#home" class="logo">
+            <span class="logo-icon">▶</span> NQJ<span>.SYS</span>
+        </a>
+
+        <!-- 2. The Right Side Group (Flex Container) -->
+        <div class="nav-group">
+            
+            <!-- The "White Pill" (Main Menu) -->
+            <div class="nav-pill white-pill">
+                <a href="#work" onclick="filterProjects('digital')">UI & Web</a>
+                <a href="#work" onclick="filterProjects('branding')">Branding</a>
+                <a href="#about">About</a>
+            </div>
+
+            <!-- The "Blue Pill" (CTA Button) -->
+            <a href="#contact" class="nav-pill blue-pill">
+                Contact ↗
+            </a>
+
+            <!-- Optional: Hamburger Icon -->
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-meta mono">
+            <span>[ SYSTEM ONLINE ]</span>
+            <span>KL, MY</span>
+            <span id="clock">10:00:00</span>
+        </div>
+        
+        <h1 class="hero-title">
+            <span class="text-muted" style="font-size: 1.5rem; display:block; margin-bottom: 10px;">Hello, I am Neville.</span>
+            DESIGNING THE <br>
+            INTERFACE BETWEEN <br>
+            <span class="text-cyan glitch-wrapper">GRAPHICS & CODE</span>
+        </h1>
+
+        <p class="hero-desc">
+            Senior Multimedia Designer with 7+ years of experience bridging visual identity and frontend architecture. Formerly collaborating with <strong style="color: white">COVER Corp (Hololive)</strong> to build immersive digital experiences.
+        </p>
+
+        <div>
+            <a href="#work" class="btn mono">Initialize Project View</a>
+        </div>
+
+        <div class="scroll-indicator mono">
+            <span class="jp">スクロール</span> SCROLL
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work">
+        <div class="jp-decoration">作品</div>
+        <div class="section-header">
+            <div>
+                <span class="section-subtitle mono">// CASE STUDIES</span>
+                <h2 class="section-title">Selected Works</h2>
+            </div>
+            
+            <div class="filter-controls mono">
+                <button class="filter-btn active" onclick="filterProjects('all')">All Systems</button>
+                <button class="filter-btn" onclick="filterProjects('digital')">Digital / UI</button>
+                <button class="filter-btn" onclick="filterProjects('branding')">Branding</button>
+            </div>
+        </div>
+
+        <div class="project-grid">
+            <!-- Featured Project -->
+            <article class="project-card featured" data-category="digital">
+                <div class="card-image">
+                    <div class="card-image-placeholder" style="background: linear-gradient(45deg, #27c7ff, #1ca6d8);">
+                        COVER Corp
+                    </div>
+                    <div class="card-overlay mono">FEATURED PROJECT</div>
+                </div>
+                <div class="card-content">
+                    <span class="card-meta mono">WEB DEVELOPMENT & UI DESIGN</span>
+                    <h3 class="card-title">Hololive Super Expo</h3>
+                    <p class="card-desc">
+                        Collaborated with the Japanese production team to design and implement key frontend components for the Hololive Super Expo event site.
+                    </p>
+                    <div class="tech-stack mono">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">SCSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <br>
+                    <a href="#" class="btn mono" style="padding: 10px 20px; font-size: 0.8rem;">View Case Study</a>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card" data-category="digital">
+                <div class="card-image">
+                    <div class="card-image-placeholder" style="background: #333;">Kusimi</div>
+                </div>
+                <div class="card-content">
+                    <span class="card-meta mono">UI/UX DESIGN</span>
+                    <h3 class="card-title">Kusimi App Interface</h3>
+                    <p class="card-desc">User interface overhaul for a lifestyle application. Reduced user friction by 40%.</p>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card" data-category="branding">
+                <div class="card-image">
+                    <div class="card-image-placeholder" style="background: #ff2a6d;">Tribal Tee</div>
+                </div>
+                <div class="card-content">
+                    <span class="card-meta mono">BRAND IDENTITY</span>
+                    <h3 class="card-title">Tribal Tee Co.</h3>
+                    <p class="card-desc">Complete visual identity system including logo marks and typography.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="jp-decoration" style="right: auto; left: 0;">私について</div>
+        <div class="section-header">
+            <div>
+                <span class="section-subtitle mono">// PROFILE DATABANK</span>
+                <h2 class="section-title">The Operator</h2>
+            </div>
+        </div>
+
+        <div class="about-grid">
+            <div class="bio-text">
+                <p>I am <strong>Neville Quinn James</strong>, a designer who speaks the language of developers.</p>
+                <p>My background in <strong>Multimedia Computing (B.Sc Hons)</strong> allows me to understand the constraints and possibilities of the web browser.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <span class="stat-number mono">07+</span>
+                        <span class="stat-label">Years Exp.</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number mono">B.Sc</span>
+                        <span class="stat-label">UiTM Hons.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-panel">
+                <h3 class="mono" style="margin-bottom: 25px; color: var(--text-main);">// SYNCHRONIZATION RATE</h3>
+                <div class="skill-bar">
+                    <div class="skill-info mono"><span>UI/Visual Design</span><span>95%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 95%"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info mono"><span>HTML5/CSS3</span><span>90%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 90%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <div>
+                <span class="section-subtitle mono">// TRANSMISSION</span>
+                <h2 class="section-title">Initiate Contact</h2>
+            </div>
+        </div>
+        <div style="padding: 40px; border: 1px solid var(--border-tech); background: rgba(255,255,255,0.02);">
+            <a href="mailto:neville@example.com" class="contact-email mono">neville.q.james@email.com</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <span class="footer-logo mono text-cyan">NQJ.SYS</span>
+                <p class="text-muted" style="font-size: 0.8rem;">© 2026 Neville Quinn James.</p>
+            </div>
+            <div class="mono text-muted" style="text-align: right; font-size: 0.8rem;">
+                <p>STATUS: ONLINE</p>
+                <p>LOC: MALAYSIA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
